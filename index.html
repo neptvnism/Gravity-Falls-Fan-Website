@@ -1,4 +1,4 @@
-<!-- SESSION 2 -->
+<!-- SESSION 3 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,9 +8,11 @@
     <title>Gravity Falls Characters</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            font-family: 'Trebuchet MS', sans-serif;
+            background-image: url('https://example.com/gravity-falls-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,42 +20,71 @@
             align-items: center;
         }
         header {
-            background-color: #3b5998;
-            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffd700;
             padding: 20px;
             text-align: center;
             width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
         h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ffffff;
         }
         main {
             width: 80%;
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
+            border-radius: 10px;
         }
         .character {
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #ffd700;
             border-radius: 5px;
-            background-color: #fafafa;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: rgba(255, 215, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             position: relative;
         }
         .character:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            background-color: rgba(255, 215, 0, 0.2);
         }
         .character h2 {
             margin: 0;
             font-size: 1.5em;
+            text-shadow: 1px 1px 2px #000000;
         }
         .character p {
             margin: 10px 0 0;
@@ -62,21 +93,81 @@
         .character .read-more {
             display: block;
             margin-top: 10px;
-            color: #3b5998;
+            color: #ffd700;
             cursor: pointer;
             font-size: 0.9em;
+            text-shadow: 1px 1px 2px #000000;
         }
         .character .extra-info {
             display: none;
             margin-top: 10px;
             font-size: 0.9em;
-            color: #666;
+            color: #ffffff;
+        }
+        /* Responsive Navigation */
+        .nav-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 15px;
+        }
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background: #ffd700;
+            transition: all 0.3s;
+        }
+        nav ul {
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border-radius: 10px;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Gravity Falls Characters</h1>
+        <div class="nav-container">
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#character-1">Dipper</a></li>
+                <li><a href="#character-2">Mabel</a></li>
+                <li><a href="#character-3">Grunkle Stan</a></li>
+                <li><a href="#character-4">Soos</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <div class="character" id="character-1">
@@ -123,6 +214,12 @@
             } else {
                 extraInfoDiv.style.display = "block";
             }
+        }
+
+        // JavaScript to toggle the navigation menu on smaller screens
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
         }
     </script>
 </body>

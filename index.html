@@ -1,4 +1,4 @@
-<!-- SESSION 4 -->
+<!-- SESSION 5 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            scroll-behavior: smooth;
         }
         header {
             background-color: rgba(0, 0, 0, 0.7);
@@ -75,7 +76,6 @@
             background-color: rgba(255, 215, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
         .character:hover {
             transform: scale(1.05);
@@ -105,7 +105,6 @@
             font-size: 0.9em;
             color: #ffffff;
         }
-        /* New CSS for character images and quotes */
         .character img {
             width: 100%;
             height: auto;
@@ -113,29 +112,10 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            z-index: 1;
         }
         .character img:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-        }
-        .character-quote {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #ffd700;
-            font-size: 1em;
-            text-align: center;
-            border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 2;
-        }
-        .character:hover .character-quote {
-            opacity: 1;
         }
         /* Responsive Navigation */
         .nav-container {
@@ -199,13 +179,14 @@
                 <li><a href="#character-2">Mabel</a></li>
                 <li><a href="#character-3">Grunkle Stan</a></li>
                 <li><a href="#character-4">Soos</a></li>
+                <li><a href="#character-5">Wendy</a></li>
+                <li><a href="#character-6">Bill Cipher</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="character" id="character-1">
             <img src="https://example.com/dipper.png" alt="Dipper Pines">
-            <div class="character-quote">"The future is in the past! Onwards, Aoshima!"</div>
             <h2>Dipper Pines</h2>
             <p>A curious and adventurous boy who is always eager to solve mysteries.</p>
             <span class="read-more" onclick="toggleExtraInfo('extra-1')">Read More</span>
@@ -215,7 +196,6 @@
         </div>
         <div class="character" id="character-2">
             <img src="https://example.com/mabel.png" alt="Mabel Pines">
-            <div class="character-quote">"When life gives you lemons, call them yellow oranges and sell them for double the price."</div>
             <h2>Mabel Pines</h2>
             <p>Dipper’s twin sister who is fun-loving and optimistic.</p>
             <span class="read-more" onclick="toggleExtraInfo('extra-2')">Read More</span>
@@ -225,7 +205,6 @@
         </div>
         <div class="character" id="character-3">
             <img src="https://example.com/grunkle-stan.png" alt="Grunkle Stan">
-            <div class="character-quote">"Trust no one, kid."</div>
             <h2>Grunkle Stan</h2>
             <p>The great-uncle of Dipper and Mabel who runs the Mystery Shack.</p>
             <span class="read-more" onclick="toggleExtraInfo('extra-3')">Read More</span>
@@ -235,21 +214,32 @@
         </div>
         <div class="character" id="character-4">
             <img src="https://example.com/soos.png" alt="Soos Ramirez">
-            <div class="character-quote">"Dude, am I right? Or am I right?"</div>
             <h2>Soos Ramirez</h2>
             <p>The handyman at the Mystery Shack who is loyal and good-natured.</p>
             <span class="read-more" onclick="toggleExtraInfo('extra-4')">Read More</span>
             <div class="extra-info" id="extra-4">
-                Soos is like an older brother figure to Dipper and Mabel. He’s always eager to help out, even if he’s a bit clumsy. His optimism is contagious, and he’s a fan favorite.
+                Soos is like an older brother figure to Dipper and Mabel. He’s always eager to help out, even if he’s a bit clumsy. His optimism is contagious, and he’s an integral part of the Mystery Shack.
+            </div>
+        </div>
+        <div class="character" id="character-5">
+            <img src="https://example.com/wendy.png" alt="Wendy Corduroy">
+            <h2>Wendy Corduroy</h2>
+            <p>A laid-back and cool teenager who works at the Mystery Shack.</p>
+            <span class="read-more" onclick="toggleExtraInfo('extra-5')">Read More</span>
+            <div class="extra-info" id="extra-5">
+                Wendy is known for her relaxed attitude and her role as a mentor to Dipper. She often provides a grounded perspective and is one of the few people who knows about the supernatural happenings in Gravity Falls.
+            </div>
+        </div>
+        <div class="character" id="character-6">
+            <img src="https://example.com/bill-cipher.png" alt="Bill Cipher">
+            <h2>Bill Cipher</h2>
+            <p>A powerful and malevolent dream demon.</p>
+            <span class="read-more" onclick="toggleExtraInfo('extra-6')">Read More</span>
+            <div class="extra-info" id="extra-6">
+                Bill Cipher is the main antagonist of the series. He is a cunning and manipulative entity who seeks to spread chaos and take over Gravity Falls. His presence adds a dark and mysterious element to the show.
             </div>
         </div>
     </main>
-
-    <!-- Background Music -->
-    <audio id="background-music" autoplay loop>
-        <source src="https://example.com/gravity-falls-theme.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
 
     <script>
         function toggleExtraInfo(extraInfoId) {
@@ -265,9 +255,6 @@
             const navMenu = document.getElementById('nav-menu');
             navMenu.classList.toggle('show');
         }
-
-        // Optional: Adjust the volume of the background music
-        document.getElementById('background-music').volume = 0.3;
     </script>
 </body>
 </html>

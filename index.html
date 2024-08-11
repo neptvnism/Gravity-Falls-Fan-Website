@@ -1,0 +1,85 @@
+<!-- SESSION 1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Falls Characters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #3b5998;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        main {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .character {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .character h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .character p {
+            margin: 10px 0 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gravity Falls Characters</h1>
+    </header>
+    <main>
+        <div class="character" id="character-1">
+            <h2>Dipper Pines</h2>
+            <p>Description goes here.</p>
+        </div>
+        <div class="character" id="character-2">
+            <h2>Mabel Pines</h2>
+            <p>Description goes here.</p>
+        </div>
+    </main>
+    <script>
+        // JavaScript placeholder for future functionality
+        console.log("Gravity Falls website is up and running!");
+
+        function showCharacterInfo(id, name, description) {
+            const characterDiv = document.getElementById(id);
+            characterDiv.querySelector('h2').textContent = name;
+            characterDiv.querySelector('p').textContent = description;
+        }
+
+        // Example usage:
+        showCharacterInfo('character-1', 'Dipper Pines', 'A curious and adventurous boy who is always eager to solve mysteries.');
+        showCharacterInfo('character-2', 'Mabel Pines', 'Dipper’s twin sister who is fun-loving and optimistic.');
+    </script>
+</body>
+</html>

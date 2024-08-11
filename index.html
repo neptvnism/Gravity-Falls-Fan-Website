@@ -1,4 +1,4 @@
-<!-- SESSION 1 -->
+<!-- SESSION 2 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,18 +30,26 @@
         }
         main {
             width: 80%;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
         }
         .character {
-            margin: 20px 0;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fafafa;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .character:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
         .character h2 {
             margin: 0;
@@ -50,6 +58,19 @@
         .character p {
             margin: 10px 0 0;
             font-size: 1em;
+        }
+        .character .read-more {
+            display: block;
+            margin-top: 10px;
+            color: #3b5998;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .character .extra-info {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
@@ -60,26 +81,49 @@
     <main>
         <div class="character" id="character-1">
             <h2>Dipper Pines</h2>
-            <p>Description goes here.</p>
+            <p>A curious and adventurous boy who is always eager to solve mysteries.</p>
+            <span class="read-more" onclick="toggleExtraInfo('extra-1')">Read More</span>
+            <div class="extra-info" id="extra-1">
+                Dipper is often seen with a journal that contains information on the mysteries of Gravity Falls. He is intelligent and determined, though sometimes overthinks situations.
+            </div>
         </div>
         <div class="character" id="character-2">
             <h2>Mabel Pines</h2>
-            <p>Description goes here.</p>
+            <p>Dipper’s twin sister who is fun-loving and optimistic.</p>
+            <span class="read-more" onclick="toggleExtraInfo('extra-2')">Read More</span>
+            <div class="extra-info" id="extra-2">
+                Mabel is known for her colorful sweaters and bubbly personality. She enjoys arts and crafts, and her positive outlook often helps the group out of tricky situations.
+            </div>
+        </div>
+        <div class="character" id="character-3">
+            <h2>Grunkle Stan</h2>
+            <p>The great-uncle of Dipper and Mabel who runs the Mystery Shack.</p>
+            <span class="read-more" onclick="toggleExtraInfo('extra-3')">Read More</span>
+            <div class="extra-info" id="extra-3">
+                Grunkle Stan is a shrewd businessman with a mysterious past. He has a tough exterior but cares deeply for Dipper and Mabel.
+            </div>
+        </div>
+        <div class="character" id="character-4">
+            <h2>Soos Ramirez</h2>
+            <p>The lovable handyman who works at the Mystery Shack.</p>
+            <span class="read-more" onclick="toggleExtraInfo('extra-4')">Read More</span>
+            <div class="extra-info" id="extra-4">
+                Soos is loyal and hardworking, always ready to help Dipper and Mabel on their adventures. He is good-natured and loves video games.
+            </div>
         </div>
     </main>
     <script>
-        // JavaScript placeholder for future functionality
+        // JavaScript to toggle the display of extra character information
         console.log("Gravity Falls website is up and running!");
 
-        function showCharacterInfo(id, name, description) {
-            const characterDiv = document.getElementById(id);
-            characterDiv.querySelector('h2').textContent = name;
-            characterDiv.querySelector('p').textContent = description;
+        function toggleExtraInfo(extraInfoId) {
+            const extraInfoDiv = document.getElementById(extraInfoId);
+            if (extraInfoDiv.style.display === "block") {
+                extraInfoDiv.style.display = "none";
+            } else {
+                extraInfoDiv.style.display = "block";
+            }
         }
-
-        // Example usage:
-        showCharacterInfo('character-1', 'Dipper Pines', 'A curious and adventurous boy who is always eager to solve mysteries.');
-        showCharacterInfo('character-2', 'Mabel Pines', 'Dipper’s twin sister who is fun-loving and optimistic.');
     </script>
 </body>
 </html>
